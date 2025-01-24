@@ -15,7 +15,10 @@ interface FoodsProps {
             {foodItems.map((item) => (
               <Col key={item.id}>
                 <Card onClick={() => onSelectItem(item)} className="h-100 clickable-card">
-                  <Card.Img variant="top" src={`/images/${item.image}`} alt={item.name} />
+                  <Card.Img 
+                    variant="top" 
+                    src={`${import.meta.env.VITE_BASE_URL}images/${item.image}`}
+                    alt={item.name} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>{item.desc}</Card.Text>
